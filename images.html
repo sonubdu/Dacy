@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+ <html>
+<head>
+    <meta charset="utf-8">
+    <meta content="telephone=no" name="format-detection">
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta content=
+    "user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+    name="viewport">
+   <script type="text/javascript" src="cordova.js"></script>
+    <script src="lib/jquery.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="dist/js/framework7.min.js"></script>
+    <script type="text/javascript" src="dist/js/my-app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/gpsDetectionPlugin.js"></script>
+    <script type="text/javascript" src="common.js"></script>
+    <title>Camera Cordova Plugin</title>
+    <script>
+      // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+         var ref = window.open('http://apache.org', '_blank', 'location=yes');
+         ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
+         ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
+         ref.addEventListener('exit', function() { alert(event.type); });
+    }
+    </script>
+</head>
+ 
+<body>
+    <button onclick="capturePhoto();">Capture Photo</button><br>
+    <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo
+    Library</button><br>
+    <img id="image" src="" style="display:none;width:10%;">
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+    <title>DACY</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="dist/css/framework7.material.min.css">
+    <link rel="stylesheet" href="dist/css/framework7.material.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="dist/css/my-app.css">
+     <link rel="stylesheet" href="css/ionicons.css">
+   
+    <script type="text/javascript"> 
+		document.addEventListener("deviceready", getGpsinfo, false);
+		function getGpsinfo() {
+		   createdb();
+		   
+		   var usid=localStorage.getItem("Userid");
+		   if(usid > 0)
+		   {
+		     document.getElementById('loginform').style.display="none";
+             document.getElementById("mhome").click();
+		   }else{
+		   	
+		   	 document.getElementById('loginform').style.display="block";
+            
+		   }
+		   
+		   gpsDetect = cordova.require('cordova/plugin/gpsDetectionPlugin');
+		   var checkButton = document.getElementById("check");
+		   var loginButton = document.getElementById("signin");
+		  
+		   
+			
+			loginButton.onclick = function() {
+				MLogin();
+			} 
+			
+			
+			checkButton.onclick = function() {
+				gpsDetect.checkGPS(onGPSSuccess, onGPSError);
+			} 
+			
+			function onGPSSuccess(on) {
+				if (on) alert("GPS is enabled");
+				else alert("GPS is disabled");
+			}
+			
+			function onGPSError(e) {
+				alert("Error : "+e);
+			}
+			 
+		   var openSettingsButton = document.getElementById("openSettings");
+
+			openSettingsButton.onclick = function() {
+				gpsDetect.switchToLocationSettings(onSwitchToLocationSettingsSuccess, onSwitchToLocationSettingsError);
+			}
+
+			function onSwitchToLocationSettingsSuccess() {
+
+			}
+
+			function onSwitchToLocationSettingsError(e) {
+				alert("Error : "+e);
+			}
+		}
+	</script>
+  </head>
+  <body>
+   
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!-- We have home navbar without left link-->
+            <div class="center1 sliding">DACY</div>
+           
+           
+          </div>
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+   <div class="pages navbar-through toolbar-through">
+          <!-- Page, data-page contains page name-->
+    <div data-page="index" class="page">
+            <!-- Scrollable page content-->
+            <div class="page-content">
+              <div class="content-block-title">Depertment of Art,Culture and Youth.</div>
+              <div class="content-block">
+                <div class="content-block-inner">
+                  <p>Welcome To Depertment of Art,Culture and Youth.Couple of worlds here because my app is so awesome!</p>
+
+                </div>
+              </div>
+      <div id="logines" class="content-block-title"></div>
+      <div class="list-block">
+      	<form name="loginform" id="loginform"  style="display:none">
+        <ul>
+          <li>
+            <div class="item-content">
+              <div class="item-media"><i class="icon icon-form-name"></i></div>
+              <div class="item-inner"> 
+                <div class="item-title label">User ID</div>
+                <div class="item-input">
+                  <input id="userid" type="text" placeholder="User ID"/>
+                </div>
+              </div>
+            </div>
+          </li>
+         <li>
+            <div class="item-content">
+              <div class="item-media"><i class="icon icon-form-password"></i></div>
+              <div class="item-inner"> 
+                <div class="item-title label">Password</div>
+                <div class="item-input">
+                  <input id="pwd"  type="password" placeholder="Password"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li>
+           
+          	 <a href="#" id="signin" class="button button-samll color-green">Sign In</a>
+         
+          <div id=status> </div>
+       
+          </li>
+         </ul>
+        </form>
+      </div>
+
+      <div class="list-block" id="depert" style="display:none">
+                <ul>
+                	<!--
+                  <li><a href="about.html" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner"> 
+                          <div class="item-title">Directorate Culture</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="services.html" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title">Youth and Sports</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="services.html" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title">Archaeological</div>
+                        </div>
+                      </div></a>
+                  </li>-->
+                  <li>
+                 </li>
+                </ul>
+              </div>
+          </div>
+       </div>
+  
+       
+        </div>
+   <div class="toolbar" id="toolbar">
+    <div class="toolbar-inner">
+    <button id="picturedata" onclick="capturePhoto(this);">Capture Photo</button><br>
+    <div style="display:none;" ><a href="mdashboard.html" id="mhome" class="link">home</a></div>
+     <div style="display:none;" ><a href="index.html" id="ihome" class="link">home</a></div>
+
+     </div>
+        </div>
+        <!-- Bottom Toolbar-->
+        
+      </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="lib/jquery.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="dist/js/framework7.min.js"></script>
+    <script type="text/javascript" src="dist/js/my-app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/gpsDetectionPlugin.js"></script>
+    <script type="text/javascript" src="common.js"></script>
+  
+    </body>
+</html>

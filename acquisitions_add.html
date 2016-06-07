@@ -1,0 +1,122 @@
+      <div class="navbar">
+			<div class="navbar-inner">
+				
+		</div>
+		</div>
+		<div class="pages">
+			<div data-page="acquisitions" class="page">
+				<div class="page-content">
+					<div class="list-block">
+					<!--<div class="content-block-title">Form Example</div>-->
+					<form class="form-horizontal" id="acquisitions" name="acquisitions">						
+						<ul>
+							<li>
+								<div class="item-content">
+									
+									<div class="item-inner">
+										<div class="item-title label">Category</div>
+										<div class="item-input">
+											<select data-validate="required" name="category">
+												<option value="stonesclpture">Stone Sculputure</option>
+												<option value="terracotta">Terra Cotta</option>
+												<option value="metalimage">Metal Image</option>
+												<option value="artobject">Art Object</option>
+												<option value="painting">Painting</option>
+												<option value="textile">Textile</option>
+												<option value="oldarms">Old Arms</option>
+												<option value="misc">Miscellaneous</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									
+									<div class="item-inner">
+										<div class="item-title label">Collection Id</div>
+										<div class="item-input">
+											<input data-validate="required" type="text" placeholder="collection id" name="collectionid"/>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									
+									<div class="item-inner">
+										<div class="item-title label">Name of Collection</div>
+										<div class="item-input">
+											<input data-validate="required" type="text" placeholder="Name of collection" name="nameofcollection"/>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									
+									<div class="item-inner">
+										<div class="item-title label">Period</div>
+										<div class="item-input">
+											<input data-validate="number" type="number" placeholder="period" name="period"/>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="align-top">
+								<div class="item-content">
+									
+									<div class="item-inner">
+										<div class="item-title label">Condition</div>
+										<div class="item-input">
+											<textarea data-validate="required" name="Condition" ></textarea>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									
+									<div class="item-inner">
+										<div class="item-title label">Mode</div>
+										<div class="item-input">
+											<select data-validate="required" name="mode">
+												<option value="gift">Gift</option>
+												<option value="purchase">Purchase</option>
+												<option value="acquisition">Acquisition</option>
+												<option value="curator_exploration">Curator Exploration</option>
+												<option value="other">Other</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									
+									<div class="item-inner">
+										<div class="item-title label">Photo Upload</div>
+										<div class="item-input">
+			                         <a href="#" class="button button-fill button-small color-green acquisitions" onclick="capturepic1(this)">add photo</a> <br>
+    							          <img id="acq_aqimg" src="" style="display:none;width:30%;">
+    							          <input type="hidden" id="acq_val" name="picture" value="">
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</form>
+					</div>
+					<div class="content-block">
+						<div class="row">
+							<!--<div class="col-50"><a href="#" class="button button-big button-fill color-red">Cancel</a></div>-->
+							<div class="col-100">
+								<!--<input type="submit" value="Submit" class="button button-big button-fill color-green" onclick="validate()"/>-->
+								 <a href="#"  class="button button-big button-fill color-green form-to-json">Save data</a>
+	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>

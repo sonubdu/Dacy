@@ -1,0 +1,103 @@
+<div class="navbar">
+			<div class="navbar-inner">
+		
+			</div>
+		</div>
+		<div class="pages">
+			<div data-page="conservationassessment" class="page">
+				<div class="page-content">
+					<!--<div class="content-block-title">Form Example</div>-->
+						<div class="list-block">
+					<form class="form-horizontal" id="conservationassessment" name="conservationassessment">
+				
+						<ul>
+							<li>
+								<div class="item-content">
+								
+									<div class="item-inner">
+										<div class="item-title label">Collection Id</div>
+										<div class="item-input">
+											<input data-validate="number" type="text" placeholder="Collection id" name="collectionid"/>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+								
+									<div class="item-inner">
+										<div class="item-title label">Assessment</div>
+										<div class="item-input">
+											<select data-validate="required" name="assessment">
+												<option value="preventive">Preventive</option>
+												<option value="curative">Curative</option>
+												<option value="other">Other</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</li>							
+							<li>
+								<div class="item-content">
+								
+									<div class="item-inner">
+										<div class="item-title label">Name of Collection</div>
+										<div class="item-input">
+											<input data-validate="required" type="text" placeholder="Name of collection" name="nameofcollection"/>
+										</div>
+									</div>
+								</div>
+							</li>
+							<div class="content-block-title">Conservation & Development Proposal</div>
+							<li>
+								<div class="item-content">
+								
+									<div class="item-inner">
+										<div class="item-title label">Photo Upload</div>
+										<div class="item-input">
+											 <a href="#" class="button button-fill button-small color-green acquisitions" onclick="capturepic1(this)">add photo</a> <br>
+    							          <img id="acq_aqimg" src="" style="display:none;width:30%;">
+    							          <input type="hidden" id="acq_val" name="picture" value="">
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="align-top">
+								<div class="item-content">
+								
+									<div class="item-inner">
+										<div class="item-title label">Condition</div>
+										<div data-validate="required" class="item-input">
+											<textarea name="condition"></textarea>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+								
+									<div class="item-inner">
+										<div class="item-title label">Proposed Amount (In Rs)</div>
+										<div class="item-input">
+											<input data-validate="number" type="number" name="amount" placeholder="Amount"/>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						</form>
+					</div>
+					<div class="content-block">
+						<div class="row">
+							<!--<div class="col-50"><a href="#" class="button button-big button-fill color-red">Cancel</a></div>-->
+							<div class="col-100">
+							    <a href="#" class="button button-big button-fill color-green form-to-json">Save data</a>
+							</div>
+							<div class="col-100">
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
